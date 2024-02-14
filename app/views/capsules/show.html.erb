@@ -1,3 +1,8 @@
 <h1>A Capsule</h1>
 <h2>Capsule name: <%= @capsule.name %></h2>
 <h3>Description: <%= @capsule.description %></h3>
+<%= simple_form_for([@capsule, @booking]) do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.submit %>
+<% end %>
