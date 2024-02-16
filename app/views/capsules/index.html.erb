@@ -1,0 +1,21 @@
+<h1>List of Capsules</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <!-- Add more columns if needed -->
+    </tr>
+  </thead>
+  <tbody>
+    <% @capsules.each do |capsule| %>
+      <tr>
+        <td><%= capsule.name %></td>
+        <td><%= capsule.description %></td>
+        <!-- Add more columns if needed -->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
