@@ -1,4 +1,5 @@
 class CapsulesController < ApplicationController
+
   def new
     @capsule = Capsule.new
   end
@@ -11,10 +12,15 @@ class CapsulesController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-
+  
+  def show
+    @capsule = Capsule.find(params[:id])
+    @booking = Booking.new
+  end
+  
   private
 
   def capsule_params
-    params.require(:capsule).permit(:name, :address, :description, :price, photos: [])
-  end
+    params.require(:capsule).permit(:name, :address, :description, :price, photos: []
+  end  
 end
