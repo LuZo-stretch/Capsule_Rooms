@@ -1,4 +1,7 @@
 class CapsulesController < ApplicationController
+  def index #Delete index if not needed. Don't forget to delete view too if so.
+    @capsules = Capsule.all
+  end
 
   def new
     @capsule = Capsule.new
