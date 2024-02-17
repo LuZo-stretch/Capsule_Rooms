@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
     @booking.user_id = current_user.id
     # @booking.capsule = @capsule
     if @booking.save
-      redirect_to capsule_path(@capsule)
+      redirect_to root_path
     else
       redirect_to capsule_path(@capsule), status: :unprocessable_entity
     end
