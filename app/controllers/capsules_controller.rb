@@ -1,5 +1,9 @@
 class CapsulesController < ApplicationController
 
+  def index
+    @capsules = Capsule.all
+  end
+  
   def new
     @capsule = Capsule.new
   end
@@ -21,6 +25,7 @@ class CapsulesController < ApplicationController
   private
 
   def capsule_params
-    params.require(:capsule).permit(:name, :address, :description, :price, photos: []
+    params.require(:capsule).permit(:name, :address, :description, :price, photos: [])
   end  
+
 end

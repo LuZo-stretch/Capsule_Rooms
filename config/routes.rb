@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :bookings, only: :create
   end
 
+  resources :capsules, only: [:index], param: :city
   # Defines the root path route ("/")
   # root "posts#index"
 end
