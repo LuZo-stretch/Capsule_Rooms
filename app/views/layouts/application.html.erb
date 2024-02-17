@@ -13,9 +13,9 @@
   <body>
     <nav class="navbar navbar-light bg-light justify-content-start align-items-center">
       <a class="navbar-brand mx-2" href="#">Capsules</a>
-      <a class="nav-item nav-link mx-2">Home</a>
+      <%= link_to "Home", root_path, class: "nav-link mx-2" %>
       <a class="nav-item nav-link mx-2">My Dashboard</a>
-      <a class="nav-item nav-link mx-2">Create capsule</a>
+      <%= link_to "Create capsule", new_capsule_path, class: "nav-link mx-2" %>
     </nav>
     <%= yield %>
   </body>
