@@ -1,5 +1,4 @@
 class CapsulesController < ApplicationController
-
   def index
     @capsules = Capsule.all
   end
@@ -10,8 +9,9 @@ class CapsulesController < ApplicationController
 
   def create
     @capsule = Capsule.new(capsule_params)
-    if @capsule.save
-      redirect_to root_path, notice: "Capsule was successfully created."
+    @capsule.user = current_user
+    if @capsule.save!
+      redirect_to capsule_path(@capsule), notice: "Capsule was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
