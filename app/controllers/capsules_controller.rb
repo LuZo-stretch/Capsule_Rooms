@@ -3,6 +3,10 @@ class CapsulesController < ApplicationController
     @capsules = Capsule.all
   end
 
+  def index
+    @capsules = Capsule.all
+  end
+
   def new
     @capsule = Capsule.new
   end
