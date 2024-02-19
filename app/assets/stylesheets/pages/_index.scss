@@ -1,2 +1,15 @@
 // Import page-specific CSS files here.
 @import "home";
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px; /* Add some space below the table */
+}
+th, td {
+  padding: 8px; /* Add padding to the table cells */
+  text-align: left; /* Align text to the left */
+  border-bottom: 1px solid #ddd; /* Add bottom border to separate rows */
+}
+th {
+  background-color: #f2f2f2; /* Add background color to header row */
+}
