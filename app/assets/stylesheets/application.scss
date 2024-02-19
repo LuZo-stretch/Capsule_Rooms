@@ -1,3 +1,6 @@
+// Import Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap');
+
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
@@ -10,3 +13,9 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "components/navbar";
+
+body {
+  font-family: 'Cormorant', serif;
+  font-size: 20px;
+}
