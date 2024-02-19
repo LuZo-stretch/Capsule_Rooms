@@ -1,12 +1,22 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.navbar {
+  width: 100%;
+  height: 85px;
+  margin: 0;
+  background-color: rgb(226, 149, 120);
+  color: rgb(237, 246, 249);
+
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar-brand {
+  padding-left: 10px;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.logo-img {
+  top: 5px;
+  width: 60px; /* Adjust the width as needed */
+}
+.nav-link {
+  font-family: 'Cormorant', serif;
+  font-weight: 600;
+  font-size: 25px;
 }

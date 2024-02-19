@@ -1,20 +1,4 @@
 
-<style>
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px; /* Add some space below the table */
-  }
-  th, td {
-    padding: 8px; /* Add padding to the table cells */
-    text-align: left; /* Align text to the left */
-    border-bottom: 1px solid #ddd; /* Add bottom border to separate rows */
-  }
-  th {
-    background-color: #f2f2f2; /* Add background color to header row */
-  }
-</style>
-
 <h1>List of Capsules</h1>
 
 <table>
@@ -28,7 +12,7 @@
   <tbody>
     <% @capsules.each do |capsule| %>
       <tr>
-        <td><%= link_to capsule.name, capsule_path(@capsule) %></td>
+        <td><%= link_to capsule.name, capsule_path(capsule) %></td>
         <td><%= capsule.description %></td>
         <td><%= capsule.price %></td>
       </tr>
@@ -38,5 +22,5 @@
 
 
 <%# Comment this out for now because it will fail without cloudinary key, get it and put in env file %>
-<%= cl_image_tag @product.photo.key, brightness: 30, radius: 20,
+<%#= cl_image_tag @product.photo.key, brightness: 30, radius: 20,
 width: 150, height: 150, crop: :thumb, gravity: :face %>
