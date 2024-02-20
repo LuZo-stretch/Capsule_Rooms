@@ -1,9 +1,14 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<p>What should we have here?</p>
-<ul>
-  <li> Log-in </li>
-  <li> Link to View of all the capsules? </li>
-</ul>
 
-<%= link_to "Find a capsule", capsules_path, class: "btn btn-primary" %>
+<p></p>
+<p></p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://pbs.twimg.com/media/GChp0B9XsAA9kcq?format=jpg&name=4096x4096);">
+  <div class="container">
+    <h1><strong>Welcome</strong></h1>
+    <p>Discover your perfect retreat</p>
+    <% if user_signed_in? %>
+      <%= link_to "Find a capsule", capsules_path, class: "btn btn-outline-light" %>
+    <% else %>
+      <%= link_to "Find a capsule", new_user_session_path, class: "btn btn-outline-light" %>
+    <% end %>
+  </div>
+</div>
