@@ -3,14 +3,27 @@
   <div class="row">
     <div class="col-6 border my-3 py-3 rounded bg-light">
       <h2>My Profile</h2>
+        <h3>Personal information:</h3>
+          <p>Some text or other talking about myself, my name, my cats, and my dreams and hopes</p>
+        <h3>My Capsules</h3>
+          <ul>
+            <% @capsules.each do |capsule| %>
+            <li><%= capsule.name %></li>
+            <% end %>
+          </ul>
     </div>
     <div class="col-6 border my-3 py-3 rounded bg-light">
       <h2>My Upcoming Bookings</h2>
+        <ul>
+          <% @bookings.each do |booking| %>
+          <li><%= booking.capsule.name %> (<%= booking.start_date %> - <%= booking.end_date %>)</li>
+          <% end %>
+        </ul>
     </div>
   </div>
   <div class="row">
     <div class="col-12 border py-3 rounded bg-light">
-      <h2>My Capsule</h2>
+      <h2>Manage Bookings Requests</h2>
     </div>
   </div>
 </div>
