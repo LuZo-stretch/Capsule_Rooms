@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   end
 
   resources :capsules, only: [:index], param: :city
+
+  get 'dashboard', to: 'pages#dashboard'
   # Defines the root path route ("/")
   # root "posts#index"
 end
