@@ -1,5 +1,5 @@
 
-<style>
+<%# <style>
   table {
     width: 100%;
     border-collapse: collapse;
@@ -13,18 +13,17 @@
   th {
     background-color: #f2f2f2; /* Add background color to header row */
   }
-</style>
+</style> %>
 
-<h1>List of Capsules</h1>
-
-<div class="row">
+<h1><strong>List of Capsules</strong></h1>
+<div class="row cards-container">
   <% @capsules.each do |capsule| %>
     <div class="col-md-4">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title"><%= capsule.name %></h5>
           <p class="card-text"><%= capsule.description %></p>
-          <p class="card-text"><strong>Price:</strong> <%= capsule.price %></p>
+          <p class="card-price"><strong>Price:</strong> <%= capsule.price %></p>
         </div>
       </div>
     </div>
