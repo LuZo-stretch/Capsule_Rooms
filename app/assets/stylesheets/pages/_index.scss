@@ -1,15 +1,29 @@
 // Import page-specific CSS files here.
 @import "home";
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 20px; /* Add some space below the table */
+
+h1 {
+  text-align: center;
 }
-th, td {
-  padding: 8px; /* Add padding to the table cells */
-  text-align: left; /* Align text to the left */
-  border-bottom: 1px solid #ddd; /* Add bottom border to separate rows */
+.cards-container {
+  display: flex;
+  justify-content: center;
 }
-th {
-  background-color: #f2f2f2; /* Add background color to header row */
+
+.card {
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.9); /* Adjust transparency here */
+  padding: 20px; /* Add padding for spacing */
+}
+
+.card-body {
+  height: 150px;
+  overflow: hidden;
+  text-align: center
+
+}
+
+.card-price {
+  margin-top: auto;
+  text-align: right; 
+
 }

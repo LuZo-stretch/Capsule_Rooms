@@ -1,24 +1,19 @@
 
-<h1>List of Capsules</h1>
+<h1><strong>List of Capsules</strong></h1>
+<div class="row cards-container">
+  <% @capsules.each do |capsule| %>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= capsule.name %></h5>
+          <p class="card-text"><%= capsule.description %></p>
+          <p class="card-price"><strong>Price:</strong> <%= capsule.price %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Price</th> <!-- Add price column header -->
-    </tr>
-  </thead>
-  <tbody>
-    <% @capsules.each do |capsule| %>
-      <tr>
-        <td><%= link_to capsule.name, capsule_path(capsule) %></td>
-        <td><%= capsule.description %></td>
-        <td><%= capsule.price %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 
 <%# Comment this out for now because it will fail without cloudinary key, get it and put in env file %>
