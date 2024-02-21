@@ -22,6 +22,12 @@ class CapsulesController < ApplicationController
     @booking = Booking.new
   end
 
+  def destroy
+    @capsule = Capsule.find(params[:id])
+    @capsule.destroy
+    redirect_to dashboard_path, status: :see_other
+  end
+
   private
 
   def capsule_params
