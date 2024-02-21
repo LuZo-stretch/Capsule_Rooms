@@ -1,8 +1,19 @@
-<h1>A Capsule</h1>
-<h2>Capsule name: <%= @capsule.name %></h2>
-<h3>Description: <%= @capsule.description %></h3>
-<%= simple_form_for([@capsule, @booking]) do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.submit %>
-<% end %>
+<div class="container my-3">
+  <div class="row">
+    <div class="col-8 pt-3">
+      <h1><%= @capsule.name %></h1>
+      <h2>Description:</h2>
+      <h2><%= @capsule.description %></h2>
+      <% @capsule.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, brightness: 30, radius: 20, width: 150, height: 150, crop: :thumb, gravity: :face %>
+      <% end %>
+    </div>
+    <div class="col-4 border p-3">
+      <%= simple_form_for([@capsule, @booking], url: capsule_bookings_path(@capsule), method: :post) do |f| %>
+        <%= f.input :start_date, as: :date, html5: true %>
+        <%= f.input :end_date, as: :date, html5: true %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
