@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   resources :capsules, only: [:show, :index, :new, :create] do
     resources :bookings, only: :create
   end
-
+  resources :capsules do
+    resources :reviews, only: [:index, :new, :create]
+  end
   # Defines the root path route ("/")
   # root "posts#index"
 end
