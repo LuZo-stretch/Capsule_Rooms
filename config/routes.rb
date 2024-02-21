@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :bookings, only: [:index]
 
-  resources :capsules, only: [:show, :index, :new, :create] do
+  resources :capsules, only: [:show, :index, :new, :create, :destroy] do
     resources :bookings, only: :create
   end
 

@@ -8,7 +8,10 @@
         <h3>My Capsules</h3>
           <ul>
             <% @capsules.each do |capsule| %>
-            <li><%= capsule.name %></li>
+            <li>
+            <%= link_to capsule.name, capsule_path(capsule), class: "link-capsule" %>
+            <%= link_to raw('<i class="fa-solid fa-trash"></i>'), capsule_path(capsule), class: "link-delete", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+            </li>
             <% end %>
           </ul>
     </div>
