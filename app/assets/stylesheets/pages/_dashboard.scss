@@ -1,0 +1,18 @@
+.link-capsule {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+
+  &:hover {
+    color: darkgray;
+  }
+}
+
+.link-delete {
+  color: black;
+  padding-left: 5px;
+  margin-left: 5px;
+
+  &:hover{
+    color: darkgray;
+  }
+}
