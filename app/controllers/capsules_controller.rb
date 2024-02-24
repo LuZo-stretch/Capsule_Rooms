@@ -20,6 +20,10 @@ class CapsulesController < ApplicationController
   def show
     @capsule = Capsule.find(params[:id])
     @booking = Booking.new
+    @markers = [{
+      lng: @capsule.longitude,
+      lat: @capsule.latitude
+    }]
   end
 
   def destroy

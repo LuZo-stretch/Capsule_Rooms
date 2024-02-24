@@ -6,43 +6,15 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.js"></script>
+
+
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
-    <%= render "shared/flashes" %>
-    <%# <nav class="navbar navbar-light justify-content-between align-items-center-3">
-
-      <div class="d-flex align-items-center">
-        <%= link_to image_tag("logo.png", class: "navbar-brand logo-img mx-2"), root_path %>
-        <%# <%= link_to "Home", root_path, class: "nav-link mx-2" %>
-        <%# <%= link_to "My Dashboard", dashboard_path, class: "nav-link mx-2" %>
-        <%# <%= link_to "Create capsule", new_capsule_path, class: "nav-link mx-2" %>
-      <%# </div> %>
-
-      <%# <div class="d-flex align-items-center">
-        <ul class="navbar-nav me-auto"> %>
-          <%# <% if user_signed_in? %>
-            <%# <li class="nav-item dropdown">
-              <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> %>
-                <%# <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar avatar-img", alt: "dropdown menu" %>
-              <%# </a> %>
-              <%# <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> %>
-                <%# <%= link_to "Action", "#", class: "dropdown-item" %>
-                <%# <%= link_to "Another action", "#", class: "dropdown-item" %>
-                <%# <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-              <%# </div> %>
-            <%# </li> %>
-          <%# <% else %>
-            <%# <li class="nav-item"> %>
-              <%# <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-            <%# </li> %>
-          <%# <% end %>
-        <%# </ul> %>
-      <%# </div> %>
-    <%# </nav> %>
     <%= yield %>
   </body>
 </html>

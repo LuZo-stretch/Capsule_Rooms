@@ -1,6 +1,8 @@
-<div class="container my-5">
+
+<%= render "shared/navbar" %>
+<div class="container">
   <h1><strong>Our Capsules</strong></h1>
-  <div class="row cards-container my-5">
+  <div class="row cards-container">
     <% @capsules.each do |capsule| %>
       <div class="col-md-4">
         <div class="card">
