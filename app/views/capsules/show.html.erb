@@ -8,11 +8,11 @@
         <%= cl_image_tag photo.key, brightness: 30, radius: 20, width: 150, height: 150, crop: :thumb, gravity: :face %>
       <% end %>
     </div>
-    <div class="col-4 border p-3">
+    <div class="col-4 border bg-light booking-box">
       <%= simple_form_for([@capsule, @booking], url: capsule_bookings_path(@capsule), method: :post) do |f| %>
         <%= f.input :start_date, as: :date, html5: true %>
         <%= f.input :end_date, as: :date, html5: true %>
-        <%= f.submit %>
+        <%= f.submit "Book", class: "button-test" %>
       <% end %>
     </div>
   </div>

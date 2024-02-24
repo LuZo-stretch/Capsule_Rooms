@@ -1,32 +1,55 @@
-<div class="container my-3">
+<div class="container my-5">
   <h1>My Dashboard</h1>
   <div class="row">
-    <div class="col-6 border my-3 py-3 rounded bg-light">
-      <h2>My Profile</h2>
+    <div class="col-6 my-3 py-3">
+      <div class="border rounded bg-light dashboard-card-test">
+        <h2>My Profile</h2>
         <h3>Personal information:</h3>
-          <p>Some text or other talking about myself, my name, my cats, and my dreams and hopes</p>
+        <p>Some text or other talking about myself, my name, my cats, and my dreams and hopes</p>
         <h3>My Capsules</h3>
-          <ul>
-            <% @capsules.each do |capsule| %>
-            <li>
-            <%= link_to capsule.name, capsule_path(capsule), class: "link-capsule" %>
-            <%= link_to raw('<i class="fa-solid fa-trash"></i>'), capsule_path(capsule), class: "link-delete", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-            </li>
-            <% end %>
-          </ul>
-    </div>
-    <div class="col-6 border my-3 py-3 rounded bg-light">
-      <h2>My Upcoming Bookings</h2>
         <ul>
-          <% @bookings.each do |booking| %>
-          <li><%= booking.capsule.name %> (<%= booking.start_date %> - <%= booking.end_date %>)</li>
+          <% @capsules.each do |capsule| %>
+            <li class="capsules-list">
+                <%= link_to capsule.name, capsule_path(capsule), class: "link-capsule" %>
+                <%= link_to raw('<i class="fa-solid fa-trash"></i>'), capsule_path(capsule), class: "link-delete", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+            </li>
           <% end %>
         </ul>
+      </div>
+    </div>
+    <div class="col-6 my-3 py-3">
+      <div class="border rounded bg-light dashboard-card-test h-100">
+        <h2>My Upcoming Bookings</h2>
+          <ul>
+            <% @bookings.each do |booking| %>
+              <li><%= booking.capsule.name %> (<%= booking.start_date %> - <%= booking.end_date %>) - <%= booking.status %></li>
+            <% end %>
+          </ul>
+        </div>
     </div>
   </div>
   <div class="row">
-    <div class="col-12 border py-3 rounded bg-light">
-      <h2>Manage Bookings Requests</h2>
+    <div class="col-12">
+      <div class="rounded bg-light dashboard-card-test border">
+        <h2>Manage Bookings Requests</h2>
+        <div class="row">
+          <% @capsule_bookings.each do |booking| %>
+            <div class="col-3">
+              <div class="card dashboard-card">
+                <h5 class ="card-title"><%= booking.capsule.name %></h5>
+                <p class="card-text">Check-in: <%= booking.start_date %></p>
+                <p class="card-text mb-3">Check-out: <%= booking.end_date %></p>
+                <%= simple_form_for booking do |f| %>
+                <div class="d-flex align-items-center">
+                  <%= f.input :status, collection: Booking::STATUSES, selected: booking.status, as: :select, include_blank: false, label_html: { class: "d-none" }, wrapper_html: { style: "margin-bottom: 0 !important; flex-grow: 1" } %>
+                  <%= f.button :submit, "Update" %>
+                </div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
