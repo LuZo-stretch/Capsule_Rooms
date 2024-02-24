@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-6 my-3 py-3">
       <div class="border rounded bg-light dashboard-card-test">
-        <h2>My Profile</h2>
+        <h2 class="dashboard-h2">My Profile</h2>
         <h3>Personal information:</h3>
         <p>Some text or other talking about myself, my name, my cats, and my dreams and hopes</p>
         <h3>My Capsules</h3>
@@ -20,7 +20,7 @@
     </div>
     <div class="col-6 my-3 py-3">
       <div class="border rounded bg-light dashboard-card-test h-100">
-        <h2>My Upcoming Bookings</h2>
+        <h2 class="dashboard-h2">My Upcoming Bookings</h2>
           <ul>
             <% @bookings.each do |booking| %>
               <li><%= booking.capsule.name %> (<%= booking.start_date %> - <%= booking.end_date %>) - <%= booking.status %></li>
@@ -32,7 +32,7 @@
   <div class="row">
     <div class="col-12">
       <div class="rounded bg-light dashboard-card-test border">
-        <h2>Manage Bookings Requests</h2>
+        <h2 class="dashboard-h2">Manage Bookings Requests</h2>
         <div class="row">
           <% @capsule_bookings.each do |booking| %>
             <div class="col-3">
