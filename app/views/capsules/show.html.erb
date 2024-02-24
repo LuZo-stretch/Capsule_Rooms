@@ -1,18 +1,48 @@
-<div class="container my-3">
-  <div class="row">
-    <div class="col-8 pt-3">
-      <h1><%= @capsule.name %></h1>
-      <h2>Description:</h2>
-      <h2><%= @capsule.description %></h2>
-      <% @capsule.photos.each do |photo| %>
-        <%= cl_image_tag photo.key, brightness: 30, radius: 20, width: 150, height: 150, crop: :thumb, gravity: :face %>
-      <% end %>
+<%= render "shared/navbar" %>
+<div class="container mb-5">
+  <h1 class="mt-4 mb-2 text-start"><%= @capsule.name %></h1>
+  <div class="mb-4">
+    <i class="fa-solid fa-earth-americas fa-sm" style="color: #bcc5d7; display: inline;"></i>
+    <p style="display: inline;"><%= @capsule.address %></p>
+  </div>
+  <div class="row align-items-start">
+    <div class="col-8 pe-5">
+      <div id="carouselExampleIndicators" class="text-center carousel slide">
+        <div class="carousel-indicators">
+          <% @capsule.photos.each_with_index do |photo, index| %>
+            <%# <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to='0' class="active" aria-current="true" aria-label="Slide 1"></button> %>
+            <%# <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button> %>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<%= index %>" class="<%= 'active' if index.zero? %>" aria-current="<%= 'true' if index.zero? %>" aria-label="Slide <%= index + 1 %>"></button>
+          <% end %>
+        </div>
+        <div class="carousel-inner">
+          <% @capsule.photos.each_with_index do |photo, index| %>
+            <div class="carousel-item <%= 'active' if index.zero? %>">
+              <%= cl_image_tag photo.key, style:"height: 400px; width: 100%; object-fit: cover;" %>
+            </div>
+          <% end %>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <h2 class="mt-4">Description</h2>
+      <%= @capsule.description %>
     </div>
-    <div class="col-4 border p-3">
+    <div class="col-4 mt-4 border p-3">
+      <div class="mb-3">
+        <h1 class="text-start" style="display: inline;">€<%= @capsule.price %></h1>
+        <p style="display: inline;">/night</p>
+      </div>
       <%= simple_form_for([@capsule, @booking], url: capsule_bookings_path(@capsule), method: :post) do |f| %>
-        <%= f.input :start_date, as: :date, html5: true %>
-        <%= f.input :end_date, as: :date, html5: true %>
-        <%= f.submit %>
+        <%= f.input :start_date, as: :date, html5: true, label: 'CHECK-IN', label_html: { style: 'font-size: smaller;' } %>
+        <%= f.input :end_date, as: :date, html5: true, label: 'CHECK-OUT', label_html: { style: 'font-size: smaller;' } %>
+        <%= f.submit 'Booking', class: 'btn btn-primary mt-4' %>
       <% end %>
     </div>
   </div>

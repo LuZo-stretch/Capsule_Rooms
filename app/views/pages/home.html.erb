@@ -1,14 +1,13 @@
-
-<p></p>
-<p></p>
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://pbs.twimg.com/media/GChp0B9XsAA9kcq?format=jpg&name=4096x4096);">
+<div class="banner">
   <div class="container">
     <h1><strong>Welcome</strong></h1>
-    <p>Discover your perfect retreat</p>
-    <% if user_signed_in? %>
-      <%= link_to "Find a capsule", capsules_path, class: "btn btn-outline-light" %>
-    <% else %>
-      <%= link_to "Find a capsule", new_user_session_path, class: "btn btn-outline-light" %>
-    <% end %>
+    <p><em>Discover Your Perfect Retreat</em></p>
+    <a>
+      <% if user_signed_in? %>
+        <%= link_to "Find a capsule", capsules_path, class: "btn btn-outline-light" %>
+      <% else %>
+        <%= link_to "Find a capsule", capsules_path, class: "btn btn-outline-light" %>
+      <% end %>
+    </a>
   </div>
 </div>
