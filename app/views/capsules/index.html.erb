@@ -3,14 +3,15 @@
   <div class="row cards-container">
     <% @capsules.each do |capsule| %>
       <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title"><%= capsule.name %></h5>
-            <p class="card-text"><%= capsule.description %></p>
-            <div class="d-flex justify-content-between align-content-end">
-            <p class="card-price "><strong>Price:</strong> <%= capsule.price %></p>
-            <%= link_to "See more", capsule_path(capsule), class: "link" %>
+        <div class="card-trip">
+          <img src="https://images.unsplash.com/photo-1644299244258-6eff135031e9?q=80&w=2890&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= capsule.name %></h2>
+              <p><%= capsule.description %></p>
             </div>
+            <h2 class="card-trip-pricing">£<%= capsule.price %></h2>
+            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
           </div>
         </div>
       </div>
