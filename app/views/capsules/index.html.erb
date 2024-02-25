@@ -6,7 +6,6 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title"><%= capsule.name %></h5>
-            <%= cl_image_tag capsule.photo.key, height: 100, width: 100, crop: :fill %>
             <p class="card-text"><%= capsule.description %></p>
             <div class="d-flex justify-content-between align-content-end">
             <p class="card-price "><strong>Price:</strong> <%= capsule.price %></p>
