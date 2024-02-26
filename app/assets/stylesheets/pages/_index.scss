@@ -5,6 +5,18 @@
   flex-wrap: wrap;
 }
 
+.card {
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.9); /* Adjust transparency here */
+  padding: 20px; /* Add padding for spacing */
+}
+
+.card-body {
+  height: 150px;
+  overflow:hidden;
+  text-align: center
+
+}
 .card-trip {
   overflow: hidden;
   background: white;
