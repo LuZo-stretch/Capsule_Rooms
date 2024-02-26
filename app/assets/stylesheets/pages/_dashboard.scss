@@ -1,0 +1,49 @@
+.link-capsule {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+
+  &:hover {
+    color: darkgray;
+  }
+}
+
+.link-delete {
+  color: black;
+  padding-left: 5px;
+  margin-left: 5px;
+
+  &:hover{
+    color: darkgray;
+  }
+}
+
+.capsules-list {
+  list-style-type: none;
+}
+
+.dashboard-h2 {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.dashboard-card {
+  overflow-wrap:break-word;
+  text-align: left;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+
+  .card-title {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .card-text {
+    margin-bottom: 0;
+  }
+
+}
+
+.dashboard-card-test {
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+  padding: 30px;
+}

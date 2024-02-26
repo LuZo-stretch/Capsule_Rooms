@@ -20,6 +20,16 @@ class CapsulesController < ApplicationController
   def show
     @capsule = Capsule.find(params[:id])
     @booking = Booking.new
+    @markers = [{
+      lng: @capsule.longitude,
+      lat: @capsule.latitude
+    }]
+  end
+
+  def destroy
+    @capsule = Capsule.find(params[:id])
+    @capsule.destroy
+    redirect_to dashboard_path, status: :see_other
   end
 
   private

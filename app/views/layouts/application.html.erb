@@ -6,11 +6,16 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.js"></script>
+
+
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
+<<<<<<< HEAD
     <nav class="navbar navbar-light justify-content-between align-items-center-3">
 
       <div class="d-flex align-items-center">
@@ -41,6 +46,8 @@
         </ul>
       </div>
     </nav>
+=======
+>>>>>>> b9a0889d69d31a63abcb08f3f25daa57d1b4853e
     <%= yield %>
   </body>
 </html>

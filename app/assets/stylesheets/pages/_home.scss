@@ -1,27 +1,37 @@
 // Specific CSS for your home-page
 .banner {
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://pbs.twimg.com/media/GChp0B9XsAA9kcq?format=jpg&name=4096x4096);
   background-size: cover;
   background-position: center;
   padding: 150px 0px;
-  margin-top: 5%;
+  height: 100vh;
 }
 
 .banner h1 {
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 42px;
+  font-size: 70px;
   font-weight: bold;
+  text-align: left;
 }
 
 .banner p {
-  font-size: 30px;
+  font-size: 45px;
   color: white;
-  opacity: .9;
+  opacity: .8;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  margin-bottom: 4%;
 }
 
 .banner a {
-  color: white;
+  color: #814d4d;
   opacity: .7;
+  font-weight: bold;
+}
+
+.btn-outline-light {
+  font-size: 18px;
+  // outline-style: double;
+  background-color: rgba(255, 251, 251, 0.827);
 }
