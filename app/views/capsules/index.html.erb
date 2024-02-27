@@ -1,28 +1,30 @@
-
 <%= render "shared/navbar" %>
 <div class="container my-5">
-  <h1><strong>Our Capsules</strong></h1>
-  <div class="row cards-container my-3">
+  <h1 class="text-center"><strong>Our Capsules</strong></h1>
+  <div class="row justify-content-center my-3">
     <% @capsules.each do |capsule| %>
-      <div class="col-md-4 mb-4"> <!-- Add mb-4 class here -->
-        <div class="card-trip text-center">
-          <div class="card-trip-content">
-            <div>
-              <h2><%= capsule.name %></h2>
-              <p><%= capsule.description %></p>
+      <div class="col-md-4 mb-4">
+        <%= link_to capsule_path(capsule), class: "capsule-card-link" do %>
+          <div class="card-trip text-center">
+            <div class="card-trip-content">
+              <div>
+                <h2><%= capsule.name %></h2>
+                <p><%= capsule.address %></p>
+              </div>
+              <img src="https://images.unsplash.com/photo-1644299244258-6eff135031e9?q=80&w=2890&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
             </div>
-            <img src="https://images.unsplash.com/photo-1644299244258-6eff135031e9?q=80&w=2890&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+            <div class="card-trip-infos">
+              <h2 class="card-trip-pricing">£<%= capsule.price %></h2>
+              <%= link_to "See more", capsule_path(capsule), class: "btn-outline-pink" %>
+            </div>
           </div>
-          <div class="card-trip-infos">
-            <h2 class="card-trip-pricing">£<%= capsule.price %></h2>
-            <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
-            <%= link_to "See more", capsule_path(capsule), class: "link" %>
-          </div>
-        </div>
+        <% end %>
       </div>
     <% end %>
   </div>
 </div>
+
+
 
 
 

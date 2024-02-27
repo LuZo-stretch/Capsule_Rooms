@@ -39,10 +39,12 @@
         <h1 class="text-start" style="display: inline;">€<%= @capsule.price %></h1>
         <p style="display: inline;">/night</p>
       </div>
-      <%= simple_form_for([@capsule, @booking], url: capsule_bookings_path(@capsule), method: :post) do |f| %>
-        <%= f.input :start_date, as: :date, html5: true, label: 'CHECK-IN', label_html: { style: 'font-size: smaller;' } %>
-        <%= f.input :end_date, as: :date, html5: true, label: 'CHECK-OUT', label_html: { style: 'font-size: smaller;' } %>
-        <%= f.submit 'Booking', class: 'btn button-test mt-4' %>
+      <% unless current_user == @capsule.user %>
+        <%= simple_form_for([@capsule, @booking], url: capsule_bookings_path(@capsule), method: :post) do |f| %>
+          <%= f.input :start_date, as: :date, html5: true, label: 'CHECK-IN', label_html: { style: 'font-size: smaller;' } %>
+          <%= f.input :end_date, as: :date, html5: true, label: 'CHECK-OUT', label_html: { style: 'font-size: smaller;' } %>
+          <%= f.submit 'Booking', class: 'btn button-test mt-4' %>
+        <% end %>
       <% end %>
     </div>
   </div>

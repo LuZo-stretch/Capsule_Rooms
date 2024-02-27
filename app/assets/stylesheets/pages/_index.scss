@@ -1,5 +1,11 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.capsule-card-link {
+  text-decoration: none;
+  color: black;
+}
+
 .cards-container {
   display: flex;
   flex-wrap: wrap;
@@ -7,8 +13,8 @@
 
 .card {
   margin-bottom: 20px;
-  background-color: rgba(255, 255, 255, 0.9); /* Adjust transparency here */
-  padding: 20px; /* Add padding for spacing */
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
 }
 
 .card-body {
@@ -24,7 +30,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  justify-content: center; /* Center content vertically */
+  justify-content: center;
 }
 
 .card-trip > img {
@@ -37,20 +43,20 @@
   padding: 16px;
   display: flex;
   flex-direction: column;
-  flex-grow: 1; /* Allow content to expand */
+  flex-grow: 1;
 }
 
 .card-trip h2 {
   font-size: 26px;
   font-weight: bold;
-  margin-top: 0; /* Remove default margin */
-  margin-bottom: 10px; /* Add margin between title and description */
+  margin-top: 0;
+  margin-bottom: 10px;
 }
 
 .card-trip p {
   font-size: 18px;
   opacity: 0.7;
-  margin: 0; /* Remove default margin */
+  margin: 0;
 }
 
 .card-trip .card-trip-infos {
@@ -60,6 +66,22 @@
   align-items: center;
 }
 
-.card-trip-infos .card-trip-user {
-  width: 40px;
+
+.btn-outline-pink {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid transparent;
+  color: #ffffff;
+  background-color:#e29578;
+  border-radius: 20px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.btn-outline-pink:hover {
+  background-color:#e294784d;
+  border-color: transparent;
+  color:black
 }
