@@ -42,24 +42,25 @@ body {
   padding-left: 30px;
   padding-right: 30px;
   margin-top: 30px;
-}
 
-.button-test {
-  align-items: center;
-  background-color: rgb(255, 186, 161);
-  border-radius: 24px;
-  border-style: none;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
-  box-sizing: border-box;
-  color: #3C4043;
-  margin-top: 10px;
-  margin-right: 15px;
-  float: right;
-  &:hover {
-    background: rgb(245, 217, 207);
+  .button-test {
+    align-items: center;
+    background-color: rgb(255, 186, 161);
+    border-radius: 24px;
+    border-style: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+    box-sizing: border-box;
+    color: #3C4043;
+    margin-top: 10px;
+    margin-right: 15px;
+    float: right;
+
+    &:hover {
+      background: rgb(245, 217, 207);
+    }
   }
 }
