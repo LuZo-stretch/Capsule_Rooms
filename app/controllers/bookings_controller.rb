@@ -8,7 +8,7 @@ class BookingsController < ApplicationController
     @booking.status = "pending"
     @capsule = Capsule.find(params[:capsule_id])
     @booking.capsule_id = @capsule.id
-    @booking.user_id = current_user.id
+    @booking.user_id = current_user.id if @capsule.user_id != current_user.id
     # @booking.capsule = @capsule
     if @booking.save
       flash[:notice] = "Capsule successfully booked!"
