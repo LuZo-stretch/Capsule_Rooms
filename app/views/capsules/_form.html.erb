@@ -1,16 +1,12 @@
-<%= simple_form_for @capsule do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-  <div class="form-inputs">
+<div class="booking-box border p-4">
+  <%= simple_form_for @capsule do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
     <%= f.input :name %>
     <%= f.input :address %>
     <%= f.input :description %>
     <%= f.input :price %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, class:'btn btn-primary' %>
-  </div>
-<% end %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true }, class: "mb-3" %>
+    <%= f.button :submit, class:'btn button-test' %>
+  <% end %>
+</div>

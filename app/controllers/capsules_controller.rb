@@ -35,6 +35,6 @@ class CapsulesController < ApplicationController
   private
 
   def capsule_params
-    params.require(:capsule).permit(:name, :address, :description, :price, photos: [])
+    params.require(:capsule).permit(:name, :address, :description, :price, :latitude, :longitude, photos: [])
   end
 end
