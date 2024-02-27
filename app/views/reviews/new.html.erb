@@ -1,0 +1,13 @@
+<h1>Leave a review</h1>
+<%= form_with(model: [@capsule, @review]) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :stars %>
+  <%= form.text_field :stars %>
+
+  <%= form.label :comment %>
+  <%= form.text_area :comment %>
+
+  <%= form.submit 'Add review' %>
+<% end %>

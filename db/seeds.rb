@@ -16,3 +16,9 @@ Capsule.create!(name: "Zen Oasis Capsule", description: "Tranquil space for medi
 Capsule.create!(name: "Artistic Retreat Capsule", description: "Unleash creativity in a mini art studio.", price: 30, user_id: user.id)
 Capsule.create!(name: "Ocean Serenity Capsule", description: "Find peace and tranquility by the virtual ocean.", price: 18, user_id: user.id)
 Capsule.create!(name: "Sky High Capsule", description: "Experience the sensation of floating among the clouds.", price: 22, user_id: user.id)
+
+capsules_data.each do |capsule_params|
+    capsule = Capsule.create!(capsule_params.merge(user_id: user.id))
+  
+    Review.create!(stars: rand(1..5), comment: "Great experience!", capsule: capsule)
+end
